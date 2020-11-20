@@ -18,14 +18,18 @@
 
 workspace(name = "animals_and_carrots")
 
-local_repository(
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
     name = "com_google_differential_privacy",
-    path = "../..",
+    urls = ["https://github.com/dasmdasm/differential-privacy/archive/main.zip"],
+    strip_prefix = "differential-privacy-main",
 )
 
-local_repository(
+http_archive(
     name = "com_google_cc_differential_privacy",
-    path = "../../cc",
+    urls = ["https://github.com/dasmdasm/differential-privacy/archive/main.zip"],
+    strip_prefix = "differential-privacy-main/cc",
 )
 
 
